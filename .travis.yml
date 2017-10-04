@@ -3,7 +3,7 @@ rvm:
   - 2.4
 
 script:
-  - sed -i -e 's#baseurl: "/Ninja-Jekyll"#baseurl: "/"#' _config.yml
+  - "sed -i -e 's/baseurl: /baseurl: \"\/\"/' _config.yml"
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site
   - find ./_site
