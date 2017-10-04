@@ -5,6 +5,7 @@ rvm:
 script:
   - bundle exec jekyll build -d _site/Ninja-Jekyll
   - bundle exec htmlproofer ./_site
+  - find ./_site
 
 env:
   global:
