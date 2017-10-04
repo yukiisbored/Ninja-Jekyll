@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.4
+
+script:
+  - bundle exec jekyll build -d _site/Ninja-Jekyll
+  - bundle exec htmlproofer ./_site
+
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+sudo: false
