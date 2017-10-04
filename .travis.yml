@@ -2,8 +2,11 @@ language: ruby
 rvm:
   - 2.4
 
+before_script:
+  - sed -i -e 's#baseurl: "/Ninja-Jekyll"#baseurl: "/"#' _config.yml
+
 script:
-  - bundle exec jekyll build -d _site/Ninja-Jekyll
+  - bundle exec jekyll build
   - bundle exec htmlproofer ./_site
   - find ./_site
 
